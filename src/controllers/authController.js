@@ -14,7 +14,7 @@ function generateOtp(length = 4) {
 // ✅ Register User
 export const registerUser = async (req, res) => {
   try {
-    const { name, email, phone, password, gender, user_type } = req.body.formData;
+    const { name, email, phone, password, gender, user_type } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
 
         const usercheck = await Visitor.findOne({
